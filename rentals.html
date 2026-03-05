@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Enforce HTTPS -->
+    <script>
+        if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+            location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        }
+    </script>
     <title>Car Rental in Rishikesh | Innova, Ertiga, Swift Dzire, Tempo Traveller on Rent - SU Tour and Travel</title>
     <meta name="description"
         content="Rent Innova Crysta, Maruti Ertiga, Swift Dzire, Tempo Traveller and Luxury Coach in Rishikesh. Best car rental and taxi service with experienced drivers. Daily, hourly and outstation bookings. Call +91 8171311827.">
