@@ -509,8 +509,120 @@ ul {
 }
 
 .feature-text h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.feature-text p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* =========================================
+   Travel Categories Area (Hills, Adventure, Pilgrimage)
+   ========================================= */
+.categories-section {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    background-color: var(--white);
+    position: relative;
+    z-index: 5;
+}
+
+.category-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.category-card {
+    display: block;
+    text-decoration: none;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.category-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.category-card.featured {
+    border: 1.5px solid var(--primary);
+    box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.15);
+}
+
+.category-card.featured:hover {
+    border-color: var(--primary);
+    box-shadow: 0 20px 30px -5px rgba(249, 115, 22, 0.25);
+}
+
+.category-img {
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.category-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.category-card:hover .category-img img {
+    transform: scale(1.1);
+}
+
+.category-info {
+    padding: 24px 20px;
+    text-align: center;
+    background: var(--white);
+}
+
+.category-info h3 {
+    color: var(--secondary);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.category-card:hover .category-info h3,
+.category-card.featured .category-info h3 {
+    color: var(--primary);
+}
+
+.category-info p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Category Grid Responsive */
+@media (max-width: 992px) {
+    .category-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .category-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .categories-section {
+        padding-bottom: 3rem;
+        padding-top: 1rem;
+    }
 }
 
 /* =========================================
