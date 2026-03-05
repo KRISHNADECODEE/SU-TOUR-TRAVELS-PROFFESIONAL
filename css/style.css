@@ -1545,3 +1545,30 @@ ul {
         text-shadow: 0 0 15px rgba(249, 115, 22, 0.6);
     }
 }
+
+/* =========================================
+   Email Icon & Animation
+   ========================================= */
+.icon.email-gradient {
+    background: linear-gradient(135deg, #ea4335 0%, #fbbc04 50%, #34a853 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(234, 67, 53, 0.3);
+    font-size: 1.5rem;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.contact-item:hover .email-gradient {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 20px rgba(234, 67, 53, 0.5);
+}
+
+.email-animated {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.email-animated:hover {
+    color: var(--primary) !important;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(249, 115, 22, 0.4);
+}
