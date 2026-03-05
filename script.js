@@ -218,3 +218,14 @@ if (contactForm) {
         contactForm.reset();
     });
 }
+
+// 9. Google Reviews Infinite Slider
+const reviewsTrack = document.getElementById('reviewsTrack');
+if (reviewsTrack) {
+    // Clone all review cards and append them for seamless infinite scroll
+    const reviewCards = reviewsTrack.querySelectorAll('.review-card');
+    reviewCards.forEach(card => {
+        const clone = card.cloneNode(true);
+        reviewsTrack.appendChild(clone);
+    });
+}
