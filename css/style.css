@@ -1217,6 +1217,13 @@ ul {
     overflow: hidden;
     position: relative;
     z-index: 1;
+    transition: max-height 0.4s ease;
+}
+
+.review-card:hover .review-text {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    display: block;
 }
 
 /* Responsive Review Cards */
