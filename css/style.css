@@ -2020,3 +2020,109 @@ ul {
     margin-bottom: 25px;
     font-size: 1rem;
 }
+
+/* =========================================
+   Payment QR Code Section
+   ========================================= */
+.payment-qr-section {
+    display: flex;
+    justify-content: center;
+}
+
+.payment-qr-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    max-width: 480px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-qr-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.payment-qr-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.payment-qr-header h3 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.payment-qr-img-wrapper {
+    background: white;
+    border-radius: 16px;
+    padding: 1rem;
+    margin: 0 auto 1.5rem;
+    max-width: 380px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.payment-qr-img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.payment-qr-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.payment-qr-footer .upi-id {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.payment-methods span {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(249, 115, 22, 0.05));
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    color: var(--primary);
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .payment-qr-card {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .payment-qr-img-wrapper {
+        max-width: 320px;
+    }
+}
