@@ -278,7 +278,8 @@ ul {
     color: var(--primary);
     font-weight: 600;
     margin-top: 2px;
-    display: none; /* Hidden on desktop by default as top bar has it */
+    display: none;
+    /* Hidden on desktop by default as top bar has it */
 }
 
 .logo-accent {
@@ -832,6 +833,28 @@ ul {
 
 .service-desc {
     font-size: 0.875rem;
+    margin-bottom: 0px;
+}
+
+.service-explore {
+    margin-top: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+}
+
+.service-card:hover .service-explore {
+    gap: 0.8rem;
+    border-bottom-color: var(--primary);
 }
 
 /* =========================================
@@ -1533,11 +1556,13 @@ ul {
     }
 
     .logo {
-        font-size: 1.25rem; /* Smaller font to fit in one line */
+        font-size: 1.25rem;
+        /* Smaller font to fit in one line */
     }
 
     .logo-subtitle {
-        display: block; /* Show phone number below logo on mobile */
+        display: block;
+        /* Show phone number below logo on mobile */
     }
 }
 
