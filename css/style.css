@@ -1600,6 +1600,22 @@ ul {
     .logo-socials {
         display: flex;
         /* Show tiny social icons below mobile number */
+        gap: 0.8rem;
+        margin-top: 6px;
+        align-items: center;
+    }
+
+    .logo-socials a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 28px !important;
+        height: 28px !important;
+        background-color: var(--primary) !important;
+        color: var(--white) !important;
+        border-radius: 50% !important;
+        font-size: 0.8rem !important;
+        box-shadow: 0 2px 4px rgba(249, 115, 22, 0.3) !important;
     }
 }
 
