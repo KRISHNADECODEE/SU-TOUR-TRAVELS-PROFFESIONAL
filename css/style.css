@@ -258,11 +258,15 @@ ul {
     height: 80px;
 }
 
-.logo-container {
+.header-logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    line-height: 1;
+}
+
+.logo-container {
+    display: block;
+    line-height: 1.2;
 }
 
 .logo {
@@ -279,7 +283,28 @@ ul {
     font-weight: 600;
     margin-top: 2px;
     display: none;
-    /* Hidden on desktop by default as top bar has it */
+    /* Hidden on desktop by default */
+}
+
+.logo-socials {
+    display: none;
+    /* Hidden on desktop */
+    gap: 0.8rem;
+    margin-top: 5px;
+    align-items: center;
+}
+
+.logo-socials a {
+    color: var(--dark-muted);
+    font-size: 0.85rem;
+    transition: var(--transition);
+    opacity: 0.8;
+}
+
+.logo-socials a:hover {
+    color: var(--primary);
+    opacity: 1;
+    transform: translateY(-1px);
 }
 
 .logo-accent {
@@ -1563,6 +1588,11 @@ ul {
     .logo-subtitle {
         display: block;
         /* Show phone number below logo on mobile */
+    }
+
+    .logo-socials {
+        display: flex;
+        /* Show tiny social icons below mobile number */
     }
 }
 
