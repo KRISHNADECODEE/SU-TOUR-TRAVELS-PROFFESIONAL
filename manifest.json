@@ -1,0 +1,16 @@
+{
+  "name": "SU Tour and Travel",
+  "short_name": "SU Tour",
+  "description": "Best car rental & taxi service in Rishikesh.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "images/char-dham.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

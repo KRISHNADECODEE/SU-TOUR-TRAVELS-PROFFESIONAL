@@ -32,6 +32,10 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#f97316">
 </head>
 
 <body class="rentals-page">
@@ -124,7 +128,7 @@
                 <!-- Vehicle 1: SUV -->
                 <div class="package-card reveal-up tilt-card">
                     <div class="package-image">
-                        <img src="images/car_rental.png" alt="Premium SUV Rental">
+                        <img src="images/car_rental.png" alt="Premium SUV Rental" loading="lazy">
                         <div class="package-badge">Popular</div>
                     </div>
                     <div class="package-content">
@@ -147,7 +151,7 @@
                 <!-- Vehicle 2: Maruti Ertiga -->
                 <div class="package-card reveal-up tilt-card" style="transition-delay: 0.1s;">
                     <div class="package-image">
-                        <img src="images/maruti_ertiga.png" alt="Maruti Ertiga Rental">
+                        <img src="images/maruti_ertiga.png" alt="Maruti Ertiga Rental" loading="lazy">
                         <div class="package-badge">Family Choice</div>
                     </div>
                     <div class="package-content">
@@ -171,7 +175,7 @@
                 <!-- Vehicle 3: Swift Dzire -->
                 <div class="package-card reveal-up tilt-card" style="transition-delay: 0.2s;">
                     <div class="package-image">
-                        <img src="images/swift_dzire.png" alt="Swift Dzire Rental">
+                        <img src="images/swift_dzire.png" alt="Swift Dzire Rental" loading="lazy">
                         <div class="package-badge">Economical</div>
                     </div>
                     <div class="package-content">
@@ -195,7 +199,7 @@
                 <!-- Vehicle 4: Tempo Traveller -->
                 <div class="package-card reveal-up tilt-card" style="transition-delay: 0.3s;">
                     <div class="package-image">
-                        <img src="images/tempo_traveller.png" alt="Tempo Traveller Rental">
+                        <img src="images/tempo_traveller.png" alt="Tempo Traveller Rental" loading="lazy">
                         <div class="package-badge">Group Travel</div>
                     </div>
                     <div class="package-content">
@@ -219,7 +223,7 @@
                 <!-- Vehicle 5: Luxury Coach -->
                 <div class="package-card reveal-up tilt-card" style="transition-delay: 0.4s;">
                     <div class="package-image">
-                        <img src="images/luxury_coach.png" alt="Luxury Coach Rental">
+                        <img src="images/luxury_coach.png" alt="Luxury Coach Rental" loading="lazy">
                         <div class="package-badge">Large Groups</div>
                     </div>
                     <div class="package-content">
@@ -260,7 +264,7 @@
         <div class="modal-content tilt-card">
             <span class="close-modal" onclick="closePackageModal()"><i class="fa-solid fa-xmark"></i></span>
             <div class="modal-img-wrapper">
-                <img id="modalImg" src="" alt="Package Details">
+                <img id="modalImg" src="" alt="Package Details" loading="lazy">
             </div>
             <div class="modal-body">
                 <h3 id="modalTitle">Package Title</h3>
@@ -320,6 +324,15 @@
 
     <!-- Scripts -->
     <script src="js/script.js?v=2"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed', err));
+            });
+        }
+    </script>
 </body>
 
 </html>
