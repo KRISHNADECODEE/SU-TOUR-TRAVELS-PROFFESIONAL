@@ -1622,7 +1622,7 @@ ul {
 
 
 /* =========================================
-   Preloader
+   Premium Aeroplane Preloader (Travel Vibe)
    ========================================= */
 .preloader {
     position: fixed;
@@ -1630,12 +1630,13 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--white);
+    background: radial-gradient(circle at center, #ffffff 0%, var(--light) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
+    overflow: hidden;
 }
 
 .preloader.fade-out {
@@ -1644,50 +1645,137 @@ ul {
 }
 
 .preloader-content {
+    position: relative;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    width: 100%;
 }
 
-.preloader .logo-accent {
-    font-size: 3rem;
-    font-weight: 800;
-    animation: pulse 1.5s infinite alternate;
+.aeroplane-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    animation: flight-bob 3s ease-in-out infinite;
 }
 
-.loader-circle {
-    width: 50px;
-    height: 50px;
-    border: 4px solid var(--primary-light);
-    border-top-color: var(--primary);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+.aeroplane-svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--primary);
+    filter: drop-shadow(0 10px 15px rgba(249, 115, 22, 0.3));
+    transform: rotate(5deg);
+}
+
+.clouds-container {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    pointer-events: none;
+}
+
+.cloud {
+    position: absolute;
+    background: #fff;
+    border-radius: 50px;
+    opacity: 0.6;
+    animation: cloud-pass linear infinite;
+}
+
+.cloud-1 {
+    width: 40px;
+    height: 10px;
+    top: 20%;
+    left: -20%;
+    animation-duration: 3s;
+}
+
+.cloud-2 {
+    width: 60px;
+    height: 15px;
+    top: 50%;
+    left: -40%;
+    animation-duration: 4.5s;
+    animation-delay: 1s;
+}
+
+.cloud-3 {
+    width: 35px;
+    height: 8px;
+    top: 80%;
+    left: -30%;
+    animation-duration: 3.5s;
+    animation-delay: 0.5s;
 }
 
 .preloader p {
-    font-weight: 500;
-    color: var(--dark-muted);
-    letter-spacing: 1px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    position: relative;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+.preloader p::after {
+    content: '...';
+    position: absolute;
+    animation: dots 1.5s steps(4, end) infinite;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
+@keyframes flight-bob {
 
+    0%,
     100% {
-        transform: scale(1.1);
-        opacity: 1;
-        text-shadow: 0 0 15px rgba(249, 115, 22, 0.5);
+        transform: translateY(0) rotate(5deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(8deg);
+    }
+}
+
+@keyframes cloud-pass {
+    from {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.6;
+    }
+
+    80% {
+        opacity: 0.6;
+    }
+
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+@keyframes dots {
+
+    0%,
+    20% {
+        content: '';
+    }
+
+    40% {
+        content: '.';
+    }
+
+    60% {
+        content: '..';
+    }
+
+    80%,
+    100% {
+        content: '...';
     }
 }
 

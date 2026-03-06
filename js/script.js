@@ -92,16 +92,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// 4. Preloader
+// 4. Preloader & Performance Measurement
 const preloader = document.querySelector(".preloader");
 if (preloader) {
     window.addEventListener("load", () => {
+        // Performance Timing
+        const loadTime = (performance.now() / 1000).toFixed(2);
+        console.log(`%c 🚀 Page Load Time: ${loadTime}s`, "color: #f97316; font-size: 14px; font-weight: bold;");
+
         setTimeout(() => {
             preloader.classList.add("fade-out");
             setTimeout(() => {
                 preloader.style.display = "none";
-            }, 300);
-        }, 150);
+            }, 500); // Wait for fade-out transition
+        }, 300); // Keep preloader visible for at least 300ms for premium feel
     });
 }
 
@@ -326,7 +330,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextSlide = () => {
             heroSlides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % heroSlides.length;
-            heroSlides[currentSlide].classList.add('active');
+
+            // Lazy load next slide background if it has data-background
+            const nextSlideEl = heroSlides[currentSlide];
+            if (nextSlideEl.hasAttribute('data-background')) {
+                nextSlideEl.style.backgroundImage = `url('${nextSlideEl.getAttribute('data-background')}')`;
+                nextSlideEl.removeAttribute('data-background');
+            }
+
+            nextSlideEl.classList.add('active');
         };
 
         setInterval(nextSlide, slideInterval);
