@@ -289,22 +289,29 @@ ul {
 .logo-socials {
     display: none;
     /* Hidden on desktop */
-    gap: 0.8rem;
-    margin-top: 5px;
+    gap: 0.6rem;
+    margin-top: 6px;
     align-items: center;
 }
 
 .logo-socials a {
-    color: var(--dark-muted);
-    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: var(--primary);
+    /* Saffron circle */
+    color: var(--white) !important;
+    border-radius: 50%;
+    font-size: 0.75rem;
     transition: var(--transition);
-    opacity: 0.8;
+    box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2);
 }
 
 .logo-socials a:hover {
-    color: var(--primary);
-    opacity: 1;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(249, 115, 22, 0.4);
 }
 
 .logo-accent {
