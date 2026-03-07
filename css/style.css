@@ -206,6 +206,16 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 4rem;
+    transition: var(--transition);
+}
+
+@media (max-width: 992px) {
+
+    .top-bar-inner,
+    .header-inner {
+        padding: 0 1.5rem;
+    }
 }
 
 .contact-info a {
@@ -255,12 +265,17 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 120px;
+    height: 150px;
     transition: var(--transition);
+    padding: 0 4rem;
+    /* Use side padding instead of container width to move it to the edge */
+    max-width: none;
+    width: 100%;
 }
 
 .header.scrolled .header-inner {
-    height: 80px;
+    height: 90px;
+    padding: 0 2rem;
 }
 
 .header-logo {
@@ -276,15 +291,15 @@ ul {
 }
 
 .logo-img {
-    height: 110px;
+    height: 140px;
     width: auto;
     object-fit: contain;
     transition: var(--transition);
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
 }
 
 .header.scrolled .logo-img {
-    height: 70px;
+    height: 80px;
 }
 
 .logo-text-group {
