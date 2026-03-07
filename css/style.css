@@ -216,6 +216,63 @@ ul {
     .header-inner {
         padding: 0 1.5rem;
     }
+
+    .header-inner {
+        height: 110px;
+    }
+
+    .logo-img {
+        height: 100px;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        height: 90px;
+    }
+
+    .logo-img {
+        height: 80px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-inner {
+        height: 70px;
+    }
+
+    .logo-img {
+        height: 60px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.65rem;
+        margin-top: 2px;
+    }
+
+    .logo-container {
+        gap: 8px;
+    }
 }
 
 .contact-info a {
